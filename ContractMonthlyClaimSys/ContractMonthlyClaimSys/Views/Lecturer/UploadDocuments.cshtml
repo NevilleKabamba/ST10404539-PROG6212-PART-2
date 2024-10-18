@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Upload Documents";
+}
+
+<h2 class="text-[#1C160C] tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6">Upload Supporting Documents</h2>
+
+<form class="px-4 py-3" asp-action="UploadDocuments" method="post" enctype="multipart/form-data">
+    <div class="flex flex-col gap-4">
+        <label class="text-[#1C160C] text-base font-normal leading-normal pb-1" for="Document">Document:</label>
+        <input type="file" id="Document" name="document" class="h-10 px-3 rounded-md border border-[#1C160C] text-[#1C160C]" />
+
+        <button type="submit" class="bg-[#019863] text-white py-2 px-4 rounded-full">Upload Document</button>
+    </div>
+</form>

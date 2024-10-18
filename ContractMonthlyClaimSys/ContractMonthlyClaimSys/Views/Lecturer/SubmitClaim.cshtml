@@ -1,0 +1,37 @@
+﻿@model ContractMonthlyClaimSys.Models.ClaimModel
+@{
+    ViewData["Title"] = "Submit Claim";
+}
+
+<h2 class="text-[#1C160C] tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6">Submit a New Claim</h2>
+
+<form class="px-4 py-3" asp-action="SubmitClaim" method="post">
+    <div class="flex flex-col gap-4">
+        <!-- Lecturer Name -->
+        <div class="flex flex-col">
+            <label class="text-[#1C160C] text-base font-normal leading-normal pb-1" for="LecturerName">Lecturer Name:</label>
+            <input type="text" id="LecturerName" name="LecturerName" class="h-10 px-3 rounded-md border border-[#1C160C] text-[#1C160C]" value="@Model.LecturerName" />
+        </div>
+
+        <!-- Hours Worked -->
+        <div class="flex flex-col">
+            <label class="text-[#1C160C] text-base font-normal leading-normal pb-1" for="HoursWorked">Hours Worked:</label>
+            <input type="number" id="HoursWorked" name="HoursWorked" class="h-10 px-3 rounded-md border border-[#1C160C] text-[#1C160C]" value="@Model.HoursWorked" />
+        </div>
+
+        <!-- Hourly Rate -->
+        <div class="flex flex-col">
+            <label class="text-[#1C160C] text-base font-normal leading-normal pb-1" for="HourlyRate">Hourly Rate:</label>
+            <input type="number" id="HourlyRate" name="HourlyRate" class="h-10 px-3 rounded-md border border-[#1C160C] text-[#1C160C]" value="@Model.HourlyRate" />
+        </div>
+
+        <!-- Notes -->
+        <div class="flex flex-col">
+            <label class="text-[#1C160C] text-base font-normal leading-normal pb-1" for="Notes">Notes:</label>
+            <textarea id="Notes" name="Notes" class="h-24 px-3 rounded-md border border-[#1C160C] text-[#1C160C]">@Model.Notes</textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="bg-[#019863] text-white py-2 px-4 rounded-full">Submit Claim</button>
+    </div>
+</form>

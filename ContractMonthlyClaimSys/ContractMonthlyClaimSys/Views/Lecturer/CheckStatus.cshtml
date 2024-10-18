@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ContractMonthlyClaimSys.Models.ClaimModel>
+@{
+    ViewData["Title"] = "Check Claim Status";
+}
+
+<h2 class="text-[#1C160C] tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6">Your Claim Status</h2>
+
+<table class="min-w-full bg-white border border-gray-200 px-4 py-3">
+    <thead class="bg-[#019863] text-white">
+        <tr>
+            <th class="text-left py-2 px-3">Claim Date</th>
+            <th class="text-left py-2 px-3">Hours Worked</th>
+            <th class="text-left py-2 px-3">Total Amount</th>
+            <th class="text-left py-2 px-3">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td class="border-t py-2 px-3">@claim.SubmissionDate.ToShortDateString()</td>
+                <td class="border-t py-2 px-3">@claim.HoursWorked</td>
+                <td class="border-t py-2 px-3">@(@claim.HoursWorked * @claim.HourlyRate)</td>
+                <td class="border-t py-2 px-3">@claim.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
